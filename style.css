@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+/* 🌞 LIGHT MODE (Default) */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f6f4fa;
+    color: #333;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+/* 🔹 SIDEBAR */
+.sidebar {
+    background-color: #5b3dc2;
+    color: white;
+    width: 260px;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.sidebar h2 {
+    color: #ffd633;
+    text-align: center;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Sidebar close button */
+.nav-toggle-btn {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 8px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.nav-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar a span {
+    white-space: nowrap;
+}
+
+.sidebar a:hover {
+    background-color: #7c5ce3;
+}
+
+.sidebar a.active {
+    background-color: #7452db;
+}
+
+/* COLLAPSED SIDEBAR */
+.sidebar.collapsed {
+    width: 70px;
+    padding: 20px 5px;
+}
+
+.sidebar.collapsed .sidebar-header h2 {
+    font-size: 0;
+}
+
+.sidebar.collapsed a span {
+    display: none;
+}
+
+.sidebar.collapsed a i {
+    margin: 0 auto;
+}
+
+/* Hide nav toggle button in collapsed state on desktop */
+.sidebar.collapsed .nav-toggle-btn {
+    font-size: 22px;
+    padding: 6px;
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode {
+    background-color: #1c1f26;
+    color: #e3e3e3;
+}
+
+body.dark-mode .sidebar {
+    background-color: #13161d;
+}
+
+body.dark-mode .sidebar h2 {
+    color: #00d9ff;
+}
+
+body.dark-mode .sidebar a.active {
+    background-color: #232833;
+}
+
+body.dark-mode .sidebar a:hover {
+    background-color: #1f2430;
+}
+
+/* 🌟 Dark Mode Button pinned to bottom */
+.mode-btn {
+    background-color: #ffd633;
+    color: #333;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: auto; /* push to bottom */
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.mode-btn:hover {
+    background-color: #ffcc00;
+}
+
+body.dark-mode .mode-btn {
+    background-color: #00d9ff;
+    color: #000;
+}
+
+body.dark-mode .mode-btn:hover {
+    background-color: #00bcd4;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #5b3dc2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: #7c5ce3;
+}
+
+body.dark-mode .mobile-menu-toggle {
+    background: #13161d;
+}
+
+/* 🧭 MAIN CONTENT */
+.main-content {
+    margin-left: 260px;
+    padding: 40px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    width: calc(100% - 260px);
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+}
+
+/* 🌈 HEADINGS */
+h1, h3 {
+    color: #f5b700;
+    text-align: center;
+}
+
+body.dark-mode h1, 
+body.dark-mode h3 {
+    color: #00d9ff;
+}
+
+/* 🧩 ACTIVITY SECTION */
+.activity-section {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-section {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🧩 DIAGRAM BOX */
+.diagram-box {
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 25px 0;
+    box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.25);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    margin-left: 60px; /* Increased to 60px */
+}
+
+.diagram-box::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ffd633, #ffb300, #ff9100, #ffd633);
+    background-size: 400% 400%;
+    border-radius: 19px;
+    z-index: -1;
+    animation: borderRotate 3s linear infinite;
+}
+
+body.dark-mode .diagram-box {
+    background: #232733;
+    box-shadow: 0px 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+body.dark-mode .diagram-box::before {
+    background: linear-gradient(45deg, #00d9ff, #0099cc, #0066cc, #00d9ff);
+    animation: borderRotate 2s linear infinite;
+}
+
+/* 🖼️ IMAGE */
+.diagram {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    object-fit: contain;
+    margin: 15px auto;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+}
+
+/* 📘 THEORY BOX */
+.theory-box {
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 25px 0;
+    line-height: 1.6;
+    box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.25);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    margin-left: 60px; /* Increased to 60px */
+}
+
+.theory-box::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ffd633, #ffb300, #ff9100, #ffd633);
+    background-size: 400% 400%;
+    border-radius: 19px;
+    z-index: -1;
+    animation: borderRotate 3s linear infinite;
+}
+
+body.dark-mode .theory-box {
+    background: #232733;
+    box-shadow: 0px 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+body.dark-mode .theory-box::before {
+    background: linear-gradient(45deg, #00d9ff, #0099cc, #0066cc, #00d9ff);
+    animation: borderRotate 2s linear infinite;
+}
+
+/* 🏠 HOME CARDS - CLICKABLE */
+.card {
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    padding: 40px 30px;
+    margin: 20px 0;
+    box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.25);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    margin-left: 60px; /* Increased to 60px */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ffd633, #ffb300, #ff9100, #ffd633);
+    background-size: 400% 400%;
+    border-radius: 19px;
+    z-index: -1;
+    animation: borderRotate 3s linear infinite;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 12px 30px rgba(255, 215, 0, 0.4);
+}
+
+.card h3 {
+    color: #5b3dc2;
+    transition: color 0.3s ease;
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.card:hover h3 {
+    color: #ff6b00;
+}
+
+body.dark-mode .card {
+    background: #232733;
+    box-shadow: 0px 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+body.dark-mode .card::before {
+    background: linear-gradient(45deg, #00d9ff, #0099cc, #0066cc, #00d9ff);
+    animation: borderRotate 2s linear infinite;
+}
+
+body.dark-mode .card:hover {
+    box-shadow: 0px 12px 30px rgba(0, 217, 255, 0.5);
+}
+
+body.dark-mode .card h3 {
+    color: #00d9ff;
+}
+
+body.dark-mode .card:hover h3 {
+    color: #00ffff;
+}
+
+/* ✨ Highlights */
+.highlight {
+    color: #f5b700;
+    font-weight: 700;
+}
+
+body.dark-mode .highlight {
+    color: #00d9ff;
+}
+
+.strong-highlight {
+    color: #ff6b00;
+    font-weight: 900;
+}
+
+body.dark-mode .strong-highlight {
+    color: #00ffff;
+}
+
+/* Back to Home Link */
+.back-to-home {
+    display: inline-block;
+    margin: 40px auto 20px;
+    padding: 12px 24px;
+    background: #5b3dc2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-left: 60px; /* Increased to 60px */
+}
+
+.back-to-home:hover {
+    background: #7c5ce3;
+    transform: translateY(-2px);
+}
+
+body.dark-mode .back-to-home {
+    background: #00d9ff;
+    color: #000;
+}
+
+body.dark-mode .back-to-home:hover {
+    background: #00bcd4;
+}
+
+/* Click me indicator for cards */
+.click-indicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ffd633;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .click-indicator {
+    opacity: 1;
+}
+
+body.dark-mode .click-indicator {
+    background: #00d9ff;
+    color: #000;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+    .sidebar {
+        left: -260px;
+        width: 260px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 80px 20px 20px 20px;
+        width: 100%;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .diagram {
+        height: 300px;
+    }
+
+    .diagram-box,
+    .theory-box,
+    .card,
+    .boundary-box,
+    .back-to-home {
+        margin-left: 0; /* Reset for mobile */
+        width: 100%;
+        margin: 20px auto;
+        padding: 25px 20px;
+    }
+
+    .card {
+        min-height: 150px;
+        padding: 30px 20px;
+    }
+
+    .card h3 {
+        font-size: 1.5em;
+    }
+
+    .activity-section,
+    .home-section {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-top: 20px;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    .click-indicator {
+        opacity: 1; /* Always show on mobile */
+        font-size: 0.8em;
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 70px 15px 15px 15px;
+    }
+
+    .diagram-box,
+    .theory-box,
+    .card,
+    .boundary-box {
+        padding: 20px 15px;
+    }
+
+    .card {
+        min-height: 120px;
+        padding: 25px 15px;
+    }
+
+    .card h3 {
+        font-size: 1.3em;
+    }
+
+    .diagram {
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+}
+
+/* 🔹 Boundary boxes */
+.boundary-box {
+    border: 3px solid transparent;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0px 4px 12px rgba(245, 183, 0, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    margin-left: 60px; /* Increased to 60px */
+}
+
+.boundary-box::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ffd633, #ffb300, #ff9100, #ffd633);
+    background-size: 400% 400%;
+    border-radius: 15px;
+    z-index: -1;
+    animation: borderRotate 3s linear infinite;
+}
+
+body.dark-mode .boundary-box {
+    box-shadow: 0px 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+body.dark-mode .boundary-box::before {
+    background: linear-gradient(45deg, #00d9ff, #0099cc, #0066cc, #00d9ff);
+    animation: borderRotate 2s linear infinite;
+}
+
+/* Center alignment for all content */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 🎭 BORDER ANIMATIONS */
+@keyframes borderRotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
