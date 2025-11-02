@@ -275,51 +275,148 @@
             animation: borderRotate 2s linear infinite;
         }
 
-        /* 🖼️ IMAGE - IMPROVED RESIZING */
-        .diagram-container {
+        /* 🖼️ CUSTOM BLOCK DIAGRAM */
+        .block-diagram {
             width: 100%;
             max-width: 800px;
-            height: auto;
             margin: 15px auto;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
-            background: linear-gradient(135deg, #f6f4fa, #e0d8f5);
+            background: linear-gradient(135deg, #e6f7ff, #f0f9ff);
+            padding: 30px 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 300px;
+            min-height: 400px;
         }
 
-        .diagram {
-            display: block;
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
+        body.dark-mode .block-diagram {
+            background: linear-gradient(135deg, #1a2a3a, #0f1a25);
         }
 
-        .diagram:hover {
-            transform: scale(1.02);
+        .diagram-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 10px;
+            text-align: center;
         }
 
-        .diagram-placeholder {
-            width: 100%;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            margin: 15px auto;
-            color: #5b3dc2;
-            font-weight: 600;
-            background: linear-gradient(135deg, #f6f4fa, #e0d8f5);
-        }
-
-        body.dark-mode .diagram-placeholder {
-            background: linear-gradient(135deg, #232733, #1c1f26);
+        body.dark-mode .diagram-title {
             color: #00d9ff;
+        }
+
+        .diagram-subtitle {
+            font-size: 1rem;
+            color: #0066cc;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        body.dark-mode .diagram-subtitle {
+            color: #66d9ff;
+        }
+
+        .diagram-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .diagram-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+        }
+
+        body.dark-mode .diagram-item {
+            background: #2a3a4a;
+            color: #e3e3e3;
+        }
+
+        .diagram-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .diagram-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #0066cc;
+        }
+
+        body.dark-mode .diagram-icon {
+            color: #00d9ff;
+        }
+
+        .diagram-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .diagram-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .connector-line {
+            height: 2px;
+            background: #0066cc;
+            flex-grow: 1;
+            margin: 0 10px;
+        }
+
+        body.dark-mode .connector-line {
+            background: #00d9ff;
+        }
+
+        .connector-arrow {
+            color: #0066cc;
+            font-size: 1.5rem;
+        }
+
+        body.dark-mode .connector-arrow {
+            color: #00d9ff;
+        }
+
+        .feedback-loop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            border: 1px dashed #ffd633;
+        }
+
+        body.dark-mode .feedback-loop {
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px dashed #00d9ff;
+        }
+
+        .feedback-icon {
+            margin-right: 10px;
+            color: #ff6b00;
+        }
+
+        body.dark-mode .feedback-icon {
+            color: #00ffff;
         }
 
         /* 📘 THEORY BOX */
@@ -334,7 +431,7 @@
             transition: all 0.3s ease;
             width: 100%;
             max-width: 900px;
-            text-align: center;
+            text-align: left;
             position: relative;
         }
 
@@ -444,13 +541,19 @@
             animation: borderRotate 2s linear infinite;
         }
 
-        /* Center alignment for all content */
-        .center-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        /* Section headings */
+        .section-heading {
+            color: #5b3dc2;
+            margin: 25px 0 15px 0;
+            text-align: left;
+            width: 100%;
+            border-bottom: 2px solid #f5b700;
+            padding-bottom: 8px;
+        }
+        
+        body.dark-mode .section-heading {
+            color: #00d9ff;
+            border-bottom: 2px solid #00d9ff;
         }
 
         /* 📱 RESPONSIVE - IMPROVED IMAGE HANDLING */
@@ -479,18 +582,14 @@
                 display: block;
             }
 
-            .diagram-container {
-                min-height: 250px;
-                max-width: 100%;
+            .diagram-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
 
-            .diagram {
-                max-height: 400px;
-            }
-
-            .diagram-placeholder {
-                height: 300px;
-                font-size: 0.9em;
+            .block-diagram {
+                min-height: 300px;
+                padding: 20px 15px;
             }
 
             .diagram-box,
@@ -528,17 +627,12 @@
                 padding: 20px 15px;
             }
 
-            .diagram-container {
-                min-height: 200px;
+            .diagram-grid {
+                grid-template-columns: 1fr;
             }
 
-            .diagram {
-                max-height: 350px;
-            }
-
-            .diagram-placeholder {
-                height: 250px;
-                font-size: 0.8em;
+            .block-diagram {
+                min-height: 250px;
             }
 
             h1 {
@@ -547,20 +641,6 @@
 
             h3 {
                 font-size: 1.3em;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .diagram-container {
-                min-height: 180px;
-            }
-
-            .diagram {
-                max-height: 300px;
-            }
-
-            .diagram-placeholder {
-                height: 200px;
             }
         }
 
@@ -599,15 +679,15 @@
         </a>
         <a href="activity1.html" class="active">
             <i class="fas fa-sun"></i>
-            <span>Solar Irrigation</span>
+            <span>Activity 1</span>
         </a>
         <a href="activity2.html">
             <i class="fas fa-fire"></i>
-            <span>Geothermal Plant</span>
+            <span>Activity 2</span>
         </a>
         <a href="activity3.html">
             <i class="fas fa-recycle"></i>
-            <span>Biomass Biogas</span>
+            <span>Activity 3</span>
         </a>
         
         <button class="mode-btn" id="modeBtn">
@@ -621,21 +701,74 @@
 
             <div class="diagram-box boundary-box">
                 <h3>System Block Diagram</h3>
-                <div class="diagram-container">
-                    <img src="activity1.png" alt="Solar irrigation block diagram" class="diagram">
+                <div class="block-diagram">
+                    <div class="diagram-title">Solar-Powered Irrigation Pumping System</div>
+                    <div class="diagram-subtitle">(Off-Grid Agriculture)</div>
+                    
+                    <div class="diagram-grid">
+                        <div class="diagram-item">
+                            <i class="fas fa-solar-panel diagram-icon"></i>
+                            <div class="diagram-label">Solar Panels</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-bolt diagram-icon"></i>
+                            <div class="diagram-label">AC/DC</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-tachometer-alt diagram-icon"></i>
+                            <div class="diagram-label">Charge Controller</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-battery-full diagram-icon"></i>
+                            <div class="diagram-label">Battery Bank</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-exchange-alt diagram-icon"></i>
+                            <div class="diagram-label">Inverter</div>
+                        </div>
+                    </div>
+                    
+                    <div class="diagram-connector">
+                        <div class="connector-line"></div>
+                        <i class="fas fa-arrow-right connector-arrow"></i>
+                        <div class="connector-line"></div>
+                    </div>
+                    
+                    <div class="diagram-item" style="max-width: 200px;">
+                        <i class="fas fa-tint diagram-icon"></i>
+                        <div class="diagram-label">Irrigation Pump</div>
+                    </div>
+                    
+                    <div class="feedback-loop">
+                        <i class="fas fa-redo-alt feedback-icon"></i>
+                        <div class="diagram-label">Soil Moisture Sensor (Feedback)</div>
+                    </div>
                 </div>
             </div>
 
             <div class="theory-box boundary-box">
-                <h3>Working Principle & Technical Details</h3>
+                <h3 class="section-heading">Source of Energy</h3>
                 <p>
-                    <span class="strong-highlight">Source of Energy:</span> The system operates entirely on <span class="highlight">solar radiation</span> captured by high-efficiency PV modules that convert sunlight directly into electrical energy through the <span class="highlight">photovoltaic effect</span>.<br><br>
-                    
-                    <span class="strong-highlight">Energy Conversion Process:</span> Solar panels generate <span class="highlight">DC electricity</span> which is regulated by <span class="highlight">MPPT charge controllers</span> to optimize power extraction. This energy either directly drives DC pumps or is stored in <span class="highlight">battery banks</span> for consistent operation. Inverter systems convert DC to AC when required for conventional pumps, ensuring reliable water delivery regardless of sunlight availability.<br><br>
-                    
-                    <span class="strong-highlight">System Output:</span> Provides <span class="highlight">automated, reliable water delivery</span> for agricultural irrigation with integrated moisture sensors that optimize water usage based on soil conditions, preventing over-irrigation and conserving water resources.<br><br>
-                    
-                    <span class="strong-highlight">Real-World Application:</span> Essential for <span class="highlight">off-grid farming</span> in arid regions, this technology enables sustainable agriculture by reducing dependence on fossil fuels and grid electricity. It significantly lowers operational costs while promoting environmental conservation through clean energy utilization in agricultural practices worldwide.
+                    The solar-powered irrigation system draws energy exclusively from <span class="highlight">solar radiation</span>, a clean and renewable energy source. Solar panels composed of photovoltaic (PV) cells convert sunlight directly into electricity through the photovoltaic effect. These panels are typically mounted on structures that can track the sun's movement to maximize energy capture throughout the day. The system's reliance on solar power makes it particularly suitable for remote agricultural areas where grid electricity is unavailable or unreliable. During peak sunlight hours, the system generates surplus energy that can be stored in batteries for use during cloudy periods or at night, ensuring continuous operation of irrigation pumps when needed.
+                </p>
+                
+                <h3 class="section-heading">Conversion Process</h3>
+                <p>
+                    Solar PV modules generate direct current (DC) electricity when exposed to sunlight. This DC power is regulated by Maximum Power Point Tracking (MPPT) charge controllers that optimize power extraction from the solar panels under varying weather conditions. The regulated electricity either directly powers DC water pumps or charges battery banks for energy storage. For systems using conventional AC pumps, inverters convert the DC electricity to alternating current (AC). Advanced systems incorporate smart controllers that monitor soil moisture levels and automatically activate irrigation when needed, optimizing water usage. This automated approach reduces human intervention while ensuring crops receive adequate hydration based on actual soil conditions rather than fixed schedules.
+                </p>
+                
+                <h3 class="section-heading">Output / Utilization</h3>
+                <p>
+                    The system provides reliable water pumping for agricultural irrigation, delivering water to crops through drip, sprinkler, or surface irrigation methods. The consistent water supply supports healthy plant growth and can significantly increase crop yields compared to rain-fed agriculture. By using soil moisture sensors, the system applies water only when needed, preventing over-irrigation and conserving precious water resources. This precision irrigation is particularly valuable in water-scarce regions. The solar-powered approach eliminates fuel costs associated with diesel pumps and reduces maintenance requirements, making it economically viable for small-scale farmers. The system can be scaled to meet various farm sizes, from small vegetable gardens to large commercial farms.
+                </p>
+                
+                <h3 class="section-heading">Real-World Relevance</h3>
+                <p>
+                    Solar-powered irrigation systems are transforming agriculture in developing regions across Africa, Asia, and Latin America. In countries like India, Kenya, and Bangladesh, these systems have enabled farmers to grow crops year-round instead of being limited to rainy seasons. Organizations like the World Bank and FAO have promoted solar irrigation as a sustainable solution to food security challenges. These systems align with multiple Sustainable Development Goals, including SDG 2 (Zero Hunger) and SDG 7 (Affordable and Clean Energy). By reducing dependence on fossil fuels and grid electricity, solar irrigation helps mitigate climate change while boosting agricultural productivity. The technology is particularly impactful for women farmers who often bear responsibility for water collection in many rural communities.
                 </p>
             </div>
         </section>
@@ -699,24 +832,6 @@
                 sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');
             }
-        });
-
-        // Handle image loading errors
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.diagram');
-            images.forEach(img => {
-                img.addEventListener('error', function() {
-                    this.style.display = 'none';
-                    const container = this.parentElement;
-                    container.innerHTML = `
-                        <div class="diagram-placeholder">
-                            <i class="fas fa-solar-panel" style="font-size: 3rem; margin-right: 15px;"></i>
-                            Solar Irrigation System Diagram<br>
-                            <small>Image not found: ${this.src.split('/').pop()}</small>
-                        </div>
-                    `;
-                });
-            });
         });
     </script>
 </body>
