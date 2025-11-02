@@ -216,7 +216,7 @@
             width: 100%;
         }
 
-        /* Activity 3 specific styles */
+        /* 🌈 HEADINGS */
         h1, h3 {
             color: #f5b700;
             text-align: center;
@@ -227,6 +227,7 @@
             color: #00d9ff;
         }
 
+        /* 🧩 ACTIVITY SECTION */
         .activity-section {
             width: 100%;
             max-width: 1000px;
@@ -235,6 +236,7 @@
             align-items: center;
         }
 
+        /* 🧩 DIAGRAM BOX - IMPROVED IMAGE RESIZING */
         .diagram-box {
             background: #fff;
             border: 3px solid transparent;
@@ -273,17 +275,151 @@
             animation: borderRotate 2s linear infinite;
         }
 
-        .diagram {
-            display: block;
+        /* 🖼️ CUSTOM BLOCK DIAGRAM */
+        .block-diagram {
             width: 100%;
             max-width: 800px;
-            height: 400px;
-            object-fit: contain;
             margin: 15px auto;
             border-radius: 12px;
+            overflow: hidden;
             box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #e6ffe6, #f0fff0);
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
         }
 
+        body.dark-mode .block-diagram {
+            background: linear-gradient(135deg, #1a2a1a, #0f1a0f);
+        }
+
+        .diagram-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        body.dark-mode .diagram-title {
+            color: #4caf50;
+        }
+
+        .diagram-subtitle {
+            font-size: 1rem;
+            color: #2e7d32;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        body.dark-mode .diagram-subtitle {
+            color: #66bb6a;
+        }
+
+        .diagram-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .diagram-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+        }
+
+        body.dark-mode .diagram-item {
+            background: #2a3a2a;
+            color: #e3e3e3;
+        }
+
+        .diagram-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .diagram-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+
+        body.dark-mode .diagram-icon {
+            color: #4caf50;
+        }
+
+        .diagram-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .diagram-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .connector-line {
+            height: 2px;
+            background: #2e7d32;
+            flex-grow: 1;
+            margin: 0 10px;
+        }
+
+        body.dark-mode .connector-line {
+            background: #4caf50;
+        }
+
+        .connector-arrow {
+            color: #2e7d32;
+            font-size: 1.5rem;
+        }
+
+        body.dark-mode .connector-arrow {
+            color: #4caf50;
+        }
+
+        .byproduct-loop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 8px;
+            border: 1px dashed #2e7d32;
+        }
+
+        body.dark-mode .byproduct-loop {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px dashed #4caf50;
+        }
+
+        .byproduct-icon {
+            margin-right: 10px;
+            color: #2e7d32;
+        }
+
+        body.dark-mode .byproduct-icon {
+            color: #66bb6a;
+        }
+
+        /* 📘 THEORY BOX */
         .theory-box {
             background: #fff;
             border: 3px solid transparent;
@@ -295,7 +431,7 @@
             transition: all 0.3s ease;
             width: 100%;
             max-width: 900px;
-            text-align: center;
+            text-align: left;
             position: relative;
         }
 
@@ -323,6 +459,7 @@
             animation: borderRotate 2s linear infinite;
         }
 
+        /* ✨ Highlights */
         .highlight {
             color: #f5b700;
             font-weight: 700;
@@ -341,6 +478,7 @@
             color: #00ffff;
         }
 
+        /* Back to Home Link */
         .back-to-home {
             display: inline-block;
             margin: 40px auto 20px;
@@ -368,6 +506,7 @@
             background: #00bcd4;
         }
 
+        /* 🔹 Boundary boxes */
         .boundary-box {
             border: 3px solid transparent;
             border-radius: 12px;
@@ -402,6 +541,22 @@
             animation: borderRotate 2s linear infinite;
         }
 
+        /* Section headings */
+        .section-heading {
+            color: #5b3dc2;
+            margin: 25px 0 15px 0;
+            text-align: left;
+            width: 100%;
+            border-bottom: 2px solid #f5b700;
+            padding-bottom: 8px;
+        }
+        
+        body.dark-mode .section-heading {
+            color: #00d9ff;
+            border-bottom: 2px solid #00d9ff;
+        }
+
+        /* 📱 RESPONSIVE - IMPROVED IMAGE HANDLING */
         @media (max-width: 768px) {
             .sidebar {
                 left: -260px;
@@ -427,8 +582,14 @@
                 display: block;
             }
 
-            .diagram {
-                height: 300px;
+            .diagram-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .block-diagram {
+                min-height: 300px;
+                padding: 20px 15px;
             }
 
             .diagram-box,
@@ -466,8 +627,12 @@
                 padding: 20px 15px;
             }
 
-            .diagram {
-                height: 250px;
+            .diagram-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .block-diagram {
+                min-height: 250px;
             }
 
             h1 {
@@ -479,6 +644,7 @@
             }
         }
 
+        /* 🎭 BORDER ANIMATIONS */
         @keyframes borderRotate {
             0% {
                 background-position: 0% 50%;
@@ -513,15 +679,15 @@
         </a>
         <a href="activity1.html">
             <i class="fas fa-sun"></i>
-            <span>Solar Irrigation</span>
+            <span>Activity 1</span>
         </a>
         <a href="activity2.html">
             <i class="fas fa-fire"></i>
-            <span>Geothermal Plant</span>
+            <span>Activity 2</span>
         </a>
         <a href="activity3.html" class="active">
             <i class="fas fa-recycle"></i>
-            <span>Biomass Biogas</span>
+            <span>Activity 3</span>
         </a>
         
         <button class="mode-btn" id="modeBtn">
@@ -534,22 +700,70 @@
             <h1>Biomass-Based Biogas Generation System</h1>
 
             <div class="diagram-box boundary-box">
-                <h3>Block Diagram</h3>
-                <div style="background: linear-gradient(135deg, #f6f4fa, #e0d8f5); height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 12px; margin: 15px auto; color: #5b3dc2; font-weight: 600;">
-                    <img src="activity3.jpg" alt="Biogas block diagram" class="diagram" style="width: 100%; height: 100%; object-fit: contain;">
+                <h3>System Block Diagram</h3>
+                <div class="block-diagram">
+                    <div class="diagram-title">Biomass-Based Biogas Generation System</div>
+                    <div class="diagram-subtitle">(Waste-to-Energy Conversion)</div>
+                    
+                    <div class="diagram-grid">
+                        <div class="diagram-item">
+                            <i class="fas fa-trash-alt diagram-icon"></i>
+                            <div class="diagram-label">Organic Waste Input</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-blender diagram-icon"></i>
+                            <div class="diagram-label">Mixing & Pre-treatment</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-drum diagram-icon"></i>
+                            <div class="diagram-label">Anaerobic Digester</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-gas-pump diagram-icon"></i>
+                            <div class="diagram-label">Biogas Storage</div>
+                        </div>
+                    </div>
+                    
+                    <div class="diagram-connector">
+                        <div class="connector-line"></div>
+                        <i class="fas fa-arrow-right connector-arrow"></i>
+                        <div class="connector-line"></div>
+                    </div>
+                    
+                    <div class="diagram-item" style="max-width: 200px;">
+                        <i class="fas fa-burn diagram-icon"></i>
+                        <div class="diagram-label">Energy Utilization</div>
+                    </div>
+                    
+                    <div class="byproduct-loop">
+                        <i class="fas fa-seedling byproduct-icon"></i>
+                        <div class="diagram-label">Digestate Fertilizer (Circular Economy)</div>
+                    </div>
                 </div>
             </div>
 
             <div class="theory-box boundary-box">
-                <h3>Working Principle & Technical Details</h3>
+                <h3 class="section-heading">Source of Energy</h3>
                 <p>
-                    <span class="highlight">Source of Energy:</span> Biomass from cattle manure, agricultural residues, food waste, and other organic materials that contain complex organic compounds suitable for anaerobic digestion processes in controlled environments.<br><br>
-                    
-                    <span class="highlight">Energy Conversion Process:</span> Organic feedstock undergoes anaerobic digestion in sealed digesters where microorganisms break down biodegradable material in oxygen-free conditions. This biological process produces biogas (60-70% methane, 30-40% CO2) and digestate. Gas purification systems remove impurities before the biogas is stored or utilized for various energy applications.<br><br>
-                    
-                    <span class="highlight">System Output:</span> Produces methane-rich biogas for cooking, heating, electricity generation, and vehicle fuel. The nutrient-rich digestate byproduct serves as high-quality organic fertilizer, completing the nutrient cycle and enhancing soil health without chemical inputs.<br><br>
-                    
-                    <span class="highlight">Real-World Application:</span> Converts organic waste into renewable energy while solving waste management challenges. Supports circular economy principles by transforming waste streams into valuable resources, reducing greenhouse gas emissions from organic decomposition, and providing decentralized energy solutions for rural communities and agricultural operations worldwide.
+                    Biogas systems derive energy from organic biomass materials through anaerobic digestion processes. Primary feedstocks include agricultural residues like crop wastes and animal manure, food processing byproducts, municipal organic waste, and dedicated energy crops. These materials contain complex organic compounds—carbohydrates, proteins, and lipids—that serve as substrates for microbial metabolism. The biological energy conversion process harnesses the metabolic activities of diverse microbial communities including hydrolytic, acidogenic, acetogenic, and methanogenic bacteria. This renewable energy approach transforms waste management challenges into energy opportunities, utilizing materials that would otherwise decompose and release methane directly into the atmosphere, thereby converting potential environmental liabilities into valuable energy assets while supporting circular economy principles.
+                </p>
+                
+                <h3 class="section-heading">Conversion Process</h3>
+                <p>
+                    The biogas conversion process occurs through four sequential biological stages within oxygen-free anaerobic digesters. First, hydrolysis breaks down complex organic polymers into simpler monomers. Acidogenesis then converts these monomers into volatile fatty acids, followed by acetogenesis where these acids transform into acetic acid, hydrogen, and carbon dioxide. Finally, methanogenesis produces methane-rich biogas through archaeal microorganisms. Optimal digestion requires maintaining temperature between 35-55°C, pH levels of 6.5-7.5, and proper carbon-to-nitrogen ratios around 25-30:1. Modern systems incorporate continuous stirred-tank reactors, plug-flow digesters, or fixed-film reactors with retention times ranging from 15-60 days depending on feedstock and temperature conditions. Gas purification systems remove hydrogen sulfide, moisture, and carbon dioxide to enhance biogas quality for various applications.
+                </p>
+                
+                <h3 class="section-heading">Output / Utilization</h3>
+                <p>
+                    Biogas systems produce multiple valuable outputs including methane-rich biogas (typically 55-70% methane, 30-45% CO2) and nutrient-dense digestate. The biogas serves as versatile renewable energy for cooking and heating in households and institutions, electricity generation through biogas generators, combined heat and power (CHP) applications, and as compressed natural gas (Bio-CNG) for vehicle fuel. A cubic meter of biogas containing 60% methane provides approximately 6 kWh of thermal energy or 2 kWh of electrical energy. The digestate byproduct contains essential nutrients—nitrogen, phosphorus, potassium—and organic matter that enhance soil fertility, structure, and water retention capacity. This completes the nutrient cycle by returning organic matter to agricultural soils, reducing dependence on synthetic fertilizers, and improving soil health through increased microbial activity and organic carbon content.
+                </p>
+                
+                <h3 class="section-heading">Real-World Relevance</h3>
+                <p>
+                    Biogas technology addresses multiple sustainable development challenges simultaneously, with significant implementations across Asia, Europe, and Africa. China leads global biogas production with millions of household-scale digesters, while Germany has over 9,000 agricultural and industrial biogas plants contributing substantially to renewable energy targets. In developing countries, small-scale biogas systems provide clean cooking fuel, reducing indoor air pollution and deforestation while improving health outcomes. Large-scale biogas facilities at landfills and wastewater treatment plants capture methane emissions that would otherwise contribute to climate change. The technology supports rural development by creating energy independence, generating employment in plant construction and operation, and enhancing agricultural productivity through organic fertilizer production. As circular economy principles gain prominence, biogas systems represent integrated solutions that transform organic waste streams into renewable energy and soil amendments while reducing greenhouse gas emissions and supporting sustainable agriculture.
                 </p>
             </div>
         </section>
