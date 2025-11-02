@@ -216,7 +216,7 @@
             width: 100%;
         }
 
-        /* Activity 2 specific styles */
+        /* 🌈 HEADINGS */
         h1, h3 {
             color: #f5b700;
             text-align: center;
@@ -227,6 +227,7 @@
             color: #00d9ff;
         }
 
+        /* 🧩 ACTIVITY SECTION */
         .activity-section {
             width: 100%;
             max-width: 1000px;
@@ -235,6 +236,7 @@
             align-items: center;
         }
 
+        /* 🧩 DIAGRAM BOX - IMPROVED IMAGE RESIZING */
         .diagram-box {
             background: #fff;
             border: 3px solid transparent;
@@ -273,17 +275,151 @@
             animation: borderRotate 2s linear infinite;
         }
 
-        .diagram {
-            display: block;
+        /* 🖼️ CUSTOM BLOCK DIAGRAM */
+        .block-diagram {
             width: 100%;
             max-width: 800px;
-            height: 400px;
-            object-fit: contain;
             margin: 15px auto;
             border-radius: 12px;
+            overflow: hidden;
             box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #fff5e6, #fff0db);
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
         }
 
+        body.dark-mode .block-diagram {
+            background: linear-gradient(135deg, #2a2a1e, #1f1f15);
+        }
+
+        .diagram-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #cc6600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        body.dark-mode .diagram-title {
+            color: #ff9900;
+        }
+
+        .diagram-subtitle {
+            font-size: 1rem;
+            color: #cc6600;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        body.dark-mode .diagram-subtitle {
+            color: #ffaa33;
+        }
+
+        .diagram-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .diagram-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+        }
+
+        body.dark-mode .diagram-item {
+            background: #3a3a2a;
+            color: #e3e3e3;
+        }
+
+        .diagram-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .diagram-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #cc6600;
+        }
+
+        body.dark-mode .diagram-icon {
+            color: #ff9900;
+        }
+
+        .diagram-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .diagram-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .connector-line {
+            height: 2px;
+            background: #cc6600;
+            flex-grow: 1;
+            margin: 0 10px;
+        }
+
+        body.dark-mode .connector-line {
+            background: #ff9900;
+        }
+
+        .connector-arrow {
+            color: #cc6600;
+            font-size: 1.5rem;
+        }
+
+        body.dark-mode .connector-arrow {
+            color: #ff9900;
+        }
+
+        .reinjection-loop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 153, 0, 0.1);
+            border-radius: 8px;
+            border: 1px dashed #cc6600;
+        }
+
+        body.dark-mode .reinjection-loop {
+            background: rgba(255, 153, 0, 0.1);
+            border: 1px dashed #ff9900;
+        }
+
+        .reinjection-icon {
+            margin-right: 10px;
+            color: #cc6600;
+        }
+
+        body.dark-mode .reinjection-icon {
+            color: #ffaa33;
+        }
+
+        /* 📘 THEORY BOX */
         .theory-box {
             background: #fff;
             border: 3px solid transparent;
@@ -295,7 +431,7 @@
             transition: all 0.3s ease;
             width: 100%;
             max-width: 900px;
-            text-align: center;
+            text-align: left;
             position: relative;
         }
 
@@ -323,6 +459,7 @@
             animation: borderRotate 2s linear infinite;
         }
 
+        /* ✨ Highlights */
         .highlight {
             color: #f5b700;
             font-weight: 700;
@@ -341,6 +478,7 @@
             color: #00ffff;
         }
 
+        /* Back to Home Link */
         .back-to-home {
             display: inline-block;
             margin: 40px auto 20px;
@@ -368,6 +506,7 @@
             background: #00bcd4;
         }
 
+        /* 🔹 Boundary boxes */
         .boundary-box {
             border: 3px solid transparent;
             border-radius: 12px;
@@ -402,6 +541,22 @@
             animation: borderRotate 2s linear infinite;
         }
 
+        /* Section headings */
+        .section-heading {
+            color: #5b3dc2;
+            margin: 25px 0 15px 0;
+            text-align: left;
+            width: 100%;
+            border-bottom: 2px solid #f5b700;
+            padding-bottom: 8px;
+        }
+        
+        body.dark-mode .section-heading {
+            color: #00d9ff;
+            border-bottom: 2px solid #00d9ff;
+        }
+
+        /* 📱 RESPONSIVE - IMPROVED IMAGE HANDLING */
         @media (max-width: 768px) {
             .sidebar {
                 left: -260px;
@@ -427,8 +582,14 @@
                 display: block;
             }
 
-            .diagram {
-                height: 300px;
+            .diagram-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .block-diagram {
+                min-height: 300px;
+                padding: 20px 15px;
             }
 
             .diagram-box,
@@ -466,8 +627,12 @@
                 padding: 20px 15px;
             }
 
-            .diagram {
-                height: 250px;
+            .diagram-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .block-diagram {
+                min-height: 250px;
             }
 
             h1 {
@@ -479,6 +644,7 @@
             }
         }
 
+        /* 🎭 BORDER ANIMATIONS */
         @keyframes borderRotate {
             0% {
                 background-position: 0% 50%;
@@ -513,15 +679,15 @@
         </a>
         <a href="activity1.html">
             <i class="fas fa-sun"></i>
-            <span>Solar Irrigation</span>
+            <span>Activity 1</span>
         </a>
         <a href="activity2.html" class="active">
             <i class="fas fa-fire"></i>
-            <span>Geothermal Plant</span>
+            <span>Activity 2</span>
         </a>
         <a href="activity3.html">
             <i class="fas fa-recycle"></i>
-            <span>Biomass Biogas</span>
+            <span>Activity 3</span>
         </a>
         
         <button class="mode-btn" id="modeBtn">
@@ -534,22 +700,70 @@
             <h1>Geothermal Power Plant System</h1>
 
             <div class="diagram-box boundary-box">
-                <h3>Block Diagram</h3>
-                <div style="background: linear-gradient(135deg, #f6f4fa, #e0d8f5); height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 12px; margin: 15px auto; color: #5b3dc2; font-weight: 600;">
-                    <img src="activity2.jpg" alt="Geothermal block diagram" class="diagram" style="width: 100%; height: 100%; object-fit: contain;">
+                <h3>System Block Diagram</h3>
+                <div class="block-diagram">
+                    <div class="diagram-title">Geothermal Power Plant System</div>
+                    <div class="diagram-subtitle">(Baseload Renewable Energy)</div>
+                    
+                    <div class="diagram-grid">
+                        <div class="diagram-item">
+                            <i class="fas fa-mountain diagram-icon"></i>
+                            <div class="diagram-label">Geothermal Reservoir</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-tint diagram-icon"></i>
+                            <div class="diagram-label">Production Well</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-turbine diagram-icon"></i>
+                            <div class="diagram-label">Steam Turbine</div>
+                        </div>
+                        
+                        <div class="diagram-item">
+                            <i class="fas fa-bolt diagram-icon"></i>
+                            <div class="diagram-label">Generator</div>
+                        </div>
+                    </div>
+                    
+                    <div class="diagram-connector">
+                        <div class="connector-line"></div>
+                        <i class="fas fa-arrow-right connector-arrow"></i>
+                        <div class="connector-line"></div>
+                    </div>
+                    
+                    <div class="diagram-item" style="max-width: 200px;">
+                        <i class="fas fa-plug diagram-icon"></i>
+                        <div class="diagram-label">Power Grid</div>
+                    </div>
+                    
+                    <div class="reinjection-loop">
+                        <i class="fas fa-recycle reinjection-icon"></i>
+                        <div class="diagram-label">Reinjection Well (Sustainable Cycle)</div>
+                    </div>
                 </div>
             </div>
 
             <div class="theory-box boundary-box">
-                <h3>Working Principle & Technical Details</h3>
+                <h3 class="section-heading">Source of Energy</h3>
                 <p>
-                    <span class="highlight">Source of Energy:</span> Geothermal heat from underground reservoirs located in tectonically active regions where Earth's internal heat creates high-temperature water and steam resources suitable for power generation.<br><br>
-                    
-                    <span class="highlight">Energy Conversion Process:</span> Production wells extract high-pressure hot water or steam from depths of 1-3 kilometers. The thermal energy converts water to steam that drives turbine blades connected to generators. After passing through turbines, steam is condensed back to water in cooling towers and reinjected into the reservoir, creating a sustainable closed-loop system.<br><br>
-                    
-                    <span class="highlight">System Output:</span> Generates continuous, reliable electricity supplied directly to the power grid with capacity factors exceeding 90%, providing stable baseload power that complements intermittent renewable sources like solar and wind energy.<br><br>
-                    
-                    <span class="highlight">Real-World Application:</span> Provides 24/7 base-load power with minimal carbon emissions, making it crucial for grid stability and decarbonization efforts. Geothermal plants have small land footprints and can operate for 30+ years, offering long-term energy security while utilizing domestic energy resources effectively.
+                    Geothermal power plants harness energy from the Earth's internal heat, originating from radioactive decay in the planet's core and residual heat from planetary formation. This thermal energy manifests as high-temperature reservoirs of steam and hot water located 1-3 kilometers beneath the surface in tectonically active regions. These reservoirs, found along plate boundaries and volcanic hotspots, contain temperatures ranging from 150°C to over 370°C, providing the necessary thermal energy for efficient power generation. Unlike intermittent renewable sources, geothermal energy offers continuous, reliable baseload power that operates independently of weather conditions or time of day, making it a crucial component of sustainable energy portfolios worldwide.
+                </p>
+                
+                <h3 class="section-heading">Conversion Process</h3>
+                <p>
+                    The conversion process begins with production wells drilled into high-temperature geothermal reservoirs, extracting high-pressure steam or hot water. In flash steam plants, high-pressure hot water is "flashed" into steam when pressure drops at the surface, while dry steam plants directly use underground steam. This steam drives turbine blades connected to generators, converting thermal energy into mechanical energy and then electrical energy. After passing through turbines, the spent steam is condensed back to water in cooling towers or condensers. The condensed water, along with any extracted fluids, is then reinjected into the reservoir through injection wells, maintaining reservoir pressure and creating a sustainable closed-loop system. Advanced binary cycle plants transfer heat to a secondary fluid with a lower boiling point, enabling electricity generation from lower-temperature resources.
+                </p>
+                
+                <h3 class="section-heading">Output / Utilization</h3>
+                <p>
+                    Geothermal power plants generate continuous, reliable electricity with capacity factors typically exceeding 90%, significantly higher than most other power sources. A single medium-sized geothermal plant can produce between 50-100 megawatts of electricity, enough to power approximately 50,000-100,000 homes. This electricity is supplied directly to the power grid, providing stable baseload power that complements intermittent renewable sources like solar and wind energy. Beyond electricity generation, geothermal resources provide direct heating for industrial processes, district heating systems, and agricultural applications. The consistent power output makes geothermal energy particularly valuable for grid stability and reliability, while its minimal land footprint and low visual impact make it suitable for various geographical locations.
+                </p>
+                
+                <h3 class="section-heading">Real-World Relevance</h3>
+                <p>
+                    Geothermal power plays a vital role in global energy transition efforts, with significant installations in the United States, Indonesia, Philippines, Turkey, and New Zealand. The United States leads in geothermal capacity, particularly in California and Nevada, while Iceland generates over 25% of its electricity and meets 90% of heating needs from geothermal sources. These plants have operational lifespans of 30-50 years, offering long-term energy security and price stability. Geothermal development supports rural economic growth in remote areas while providing indigenous communities with energy independence. As technology advances, enhanced geothermal systems (EGS) are expanding potential locations beyond natural reservoirs, potentially unlocking terawatts of clean energy worldwide and contributing significantly to decarbonization goals and climate change mitigation.
                 </p>
             </div>
         </section>
